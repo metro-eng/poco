@@ -1,6 +1,7 @@
 This is the changelog file for the POCO C++ Libraries.
 
 Release 1.7.2.1 (2016-12-06)
+==========================
 - In UNIX/Linux platforms, in SharedLibraryImpl::loadImpl, always use 
   following flags to ensure linking with same library but different versions
   correctly.
