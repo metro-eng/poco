@@ -52,6 +52,12 @@ void SharedLibraryImpl::loadImpl(const std::string& path, int flags)
 		realFlags |= RTLD_LOCAL;
 	else
 		realFlags |= RTLD_GLOBAL;
+
+    // 12/06/2016: added two flags to ensure we load/link
+    // with different version of HiStor libraries correctly
+    realFlags |= RTLD_NOW;
+    realFlags |= RTLD_DEEPBIND;
+     
 	_handle = dlopen(path.c_str(), realFlags);
 	if (!_handle)
 	{
